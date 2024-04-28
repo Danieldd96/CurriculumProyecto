@@ -8,3 +8,9 @@ header{
    text-align: center
     
 };
+.trabajo{
+   display: contents
+};
+.iconos{
+    align-items: flex-end;
+}
