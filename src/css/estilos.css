@@ -1,10 +1,113 @@
-header{
-    border-width:2px;
-    border-style:solid;
-    border-color: black;
+.top{
+    text-align: center;
+}
+body{
+    border: 2px solid #000;    
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    margin-top: 70px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.position {
+    display: inline-block;
+    position: relative;
+    color: black;
+}
+.position::after, .position::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 1%;
+    background-color: currentColor;
+    top: 55%;
+}
+.position::after{
+    left: -130px;
+}
+.position::before{
+    right: -130px;
 }
 
-.Nombre{
-   text-align: center
-    
-};
+.skills{
+    display: flex;
+    flex-direction: row;
+    gap: 220px;
+    margin-left: 50px;
+    margin-bottom: 130px;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.container .progress{
+    position: relative;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    color: white;
+    background: #444 linear-gradient(to right, transparent 50%, var(--clr) 0)
+}
+.container h3{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size:  2.5em;
+    z-index: 1;
+    font: 500;
+}
+.container .progress h3 span{
+    font-size: 0.65em;
+    font-weight: 400;
+}
+.container .progress h4{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-weight: 500;
+    color: var(--clr);
+    text-transform: uppercase;
+}
+.container .progress::before{
+    content: "";
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+.container .progress::after{
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #222;
+}
+.container .progress::before{
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 50) * 0.01turn)));
+}
+.container .progressless::before{
+    background: #444;
+    transform: rotate(calc(((var(--i) - 0) * 0.01turn)));
+}
+.bajo{
+    margin-left: 70px;
+}
+.Educacion{
+    margin-left: 70px;
+}
+.hobbies{
+    display: flex;    
+    flex-wrap: wrap;
+    margin-left: 720px;
+    margin-top: -250px;
+}
