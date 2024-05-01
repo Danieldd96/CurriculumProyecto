@@ -1,7 +1,9 @@
 .top{
     text-align: center;
+    
 }
 body{
+    background: #F1F1F1;
     border: 2px solid #000;    
     justify-content: center;
     align-items: center;
@@ -9,6 +11,52 @@ body{
     margin-top: 70px;
     margin-left: 70px;
     margin-right: 70px;
+    transition: .3s ease all;
+}
+body.dark{
+    background: #000;
+    border: 2px solid;
+    border-color: #fff;
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 5px #03e9f4,
+    0 0 20px #03e9f4,
+    0 0 30px #03e9f4;
+       
+}
+body.dark img{
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 5px #03e9f4,
+    0 0 20px #03e9f4,
+    0 0 30px #03e9f4;
+}
+body.dark .top{
+    color: #F1F1F1;
+   
+    
+}
+body.dark .position{
+    color: #F1F1F1;
+}
+
+body.dark .icons{
+    color: #F1F1F1;
+    
+    
+}
+body.dark .Pskill{
+    color: #F1F1F1;
+}
+body.dark .bajo{
+    color: #F1F1F1;
+}
+body.dark .Educacion{
+    color: #F1F1F1;
+    
+}
+
+.Pskill{
+    font-size: 40px; 
+    margin-left: 30px;
 }
 .position {
     display: inline-block;
@@ -101,13 +149,113 @@ body{
 }
 .bajo{
     margin-left: 70px;
+    
 }
 .Educacion{
     margin-left: 70px;
+    margin-top: 70px;
 }
 .hobbies{
     display: flex;    
     flex-wrap: wrap;
-    margin-left: 720px;
-    margin-top: -250px;
+    margin-left: 710px;
+    margin-top: -200px;
+}
+.switch {
+    font-size: 15px;
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    outline: none;
+  }
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    transition: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+.switch.active{
+    background: orange;
+    color: #000;
+}
+.switch.active::after{
+    right: 0;
+    left: unset;
+}
+
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    z-index: 1000;
+    --transition: transform .8s;
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset ;
+    transition: opacity .6s;
+    --transform: translateY(0);
+
+}
+.modalContainer{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition)
+}
+.modalClose{
+    text-decoration: none;
+    color: #fff;
+    background-color: #f26250;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+    
+}
+.modalClose:hover{
+    color: #f26250;
+    background-color: #fff;
 }
