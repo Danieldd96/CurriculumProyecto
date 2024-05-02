@@ -259,3 +259,9 @@ body.dark .Educacion{
     color: #f26250;
     background-color: #fff;
 }
+a{
+    color: black;
+}
+body.dark a{
+    color: white;
+}
